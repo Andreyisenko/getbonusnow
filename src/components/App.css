@@ -1,0 +1,346 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Фон */
+.wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  background: radial-gradient(
+    circle at center,
+    #6a5cff 0%,
+    #3b3fd1 40%,
+    #5e1bbf 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+/* Контент */
+.content {
+  z-index: 2;
+}
+
+/* h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 20px;
+  margin-bottom: 50px;
+  opacity: 0.9;
+} */
+
+h1 {
+  font-size: 56px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+
+  background: linear-gradient(90deg, #ffffff, #cfd3ff, #ffffff);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow:
+    0 0 10px rgba(255, 255, 255, 0.8),
+    0 0 20px rgba(255, 255, 255, 0.4);
+
+  animation:
+    shimmer 6s linear infinite,
+    fadeUp 1.2s ease forwards;
+}
+
+p {
+  font-size: 22px;
+  margin-bottom: 50px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+
+  animation: fadeUp 1.6s ease forwards;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* КНОПКА */
+.cta-button {
+  position: relative;
+  padding: 20px 60px;
+  font-size: 26px;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 18px;
+  cursor: pointer;
+  background: linear-gradient(180deg, #ff7a00, #ff3c00);
+  box-shadow:
+    0 8px 0 #cc2f00,
+    0 0 25px rgba(255, 120, 0, 0.8);
+  transition: all 0.2s ease;
+  animation: pulse 2s infinite;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow:
+    0 12px 0 #cc2f00,
+    0 0 40px rgba(255, 120, 0, 1);
+}
+
+.cta-button:active {
+  transform: translateY(4px);
+  box-shadow:
+    0 4px 0 #cc2f00,
+    0 0 15px rgba(255, 120, 0, 0.6);
+}
+
+/* Пульсація */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.06);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* МИЛЬНІ ПУЗИРІ — БІЛЬШ ПРОЗОРІ + РАЙДУГА */
+.bubble {
+  position: absolute;
+  bottom: -200px;
+  border-radius: 50%;
+  animation: float linear infinite;
+  backdrop-filter: blur(6px);
+
+  /* Супер прозора база */
+  background:
+    radial-gradient(
+      circle at 30% 30%,
+      rgba(255, 255, 255, 0.9) 0%,
+      rgba(255, 255, 255, 0.5) 10%,
+      rgba(255, 255, 255, 0.15) 25%,
+      rgba(255, 255, 255, 0.05) 45%,
+      transparent 65%
+    ),
+    conic-gradient(
+      from 0deg,
+      rgba(255, 0, 255, 0.25),
+      rgba(0, 255, 255, 0.25),
+      rgba(0, 150, 255, 0.25),
+      rgba(255, 255, 0, 0.25),
+      rgba(255, 0, 255, 0.25)
+    );
+
+  background-blend-mode: screen;
+
+  box-shadow:
+    inset 0 0 30px rgba(255, 255, 255, 0.6),
+    inset 0 0 80px rgba(255, 255, 255, 0.2),
+    0 0 25px rgba(255, 255, 255, 0.2);
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  opacity: 0.6;
+}
+
+.bubble::after {
+  content: "";
+  position: absolute;
+  top: 12%;
+  left: 18%;
+  width: 35%;
+  height: 35%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.95),
+    transparent 70%
+  );
+  border-radius: 50%;
+  filter: blur(3px);
+  opacity: 0.9;
+}
+
+/* РОЗМІРИ */
+.big {
+  width: 220px;
+  height: 220px;
+  opacity: 0.25;
+}
+
+.medium {
+  width: 140px;
+  height: 140px;
+  opacity: 0.3;
+}
+
+.small {
+  width: 70px;
+  height: 70px;
+  opacity: 0.35;
+}
+
+/* ПОЗИЦІЇ */
+.b1 {
+  left: 5%;
+  animation-duration: 28s;
+}
+.b2 {
+  left: 18%;
+  animation-duration: 32s;
+}
+.b3 {
+  left: 35%;
+  animation-duration: 30s;
+}
+.b4 {
+  left: 60%;
+  animation-duration: 34s;
+}
+.b5 {
+  left: 80%;
+  animation-duration: 29s;
+}
+
+.b6 {
+  left: 10%;
+  animation-duration: 22s;
+}
+.b7 {
+  left: 45%;
+  animation-duration: 24s;
+}
+.b8 {
+  left: 70%;
+  animation-duration: 20s;
+}
+.b9 {
+  left: 85%;
+  animation-duration: 26s;
+}
+
+.b10 {
+  left: 15%;
+  animation-duration: 18s;
+}
+.b11 {
+  left: 30%;
+  animation-duration: 16s;
+}
+.b12 {
+  left: 50%;
+  animation-duration: 19s;
+}
+.b13 {
+  left: 75%;
+  animation-duration: 17s;
+}
+.b14 {
+  left: 90%;
+  animation-duration: 21s;
+}
+
+/* АНІМАЦІЯ ПІДЙОМУ */
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.4;
+  }
+  50% {
+    transform: translateY(-50vh) translateX(40px);
+  }
+  100% {
+    transform: translateY(-120vh) translateX(80px);
+    opacity: 0;
+  }
+}
+
+/* ========================= */
+/* 📱 МОБІЛЬНА ВЕРСІЯ */
+/* ========================= */
+
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 20px;
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 32px;
+    }
+
+    p {
+      font-size: 17px;
+    }
+  }
+
+  .cta-button {
+    font-size: 20px;
+    padding: 18px 35px;
+    border-radius: 14px;
+  }
+
+  /* Менші бульбашки для мобілки */
+  .big {
+    width: 140px;
+    height: 140px;
+  }
+
+  .medium {
+    width: 90px;
+    height: 90px;
+  }
+
+  .small {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* Дуже маленькі екрани (iPhone SE, старі Android) */
+@media (max-width: 400px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .cta-button {
+    font-size: 18px;
+    padding: 16px 28px;
+  }
+}

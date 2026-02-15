@@ -5,7 +5,7 @@ function App() {
   const [isActive, setIsActive] = useState(false);
 
   const clickBtn = () => {
-    const url = "https://rzekl.com/g/pm1aev55cl7e34c89e7b219aa26f6f/";
+    const url = "https://rzekl.com/g/1e8d1144947e34c89e7b16525dc3e8/";
     // "https://closefracture.com/z611x6fsdv?key=dfe86a708e40f4f092f4ea7f26834b1c";
     window.open(url, "_blank", "noopener,noreferrer");
     setIsActive(true);
